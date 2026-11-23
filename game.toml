@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Need for Speed - V-Rally"
+id = "SLUS-00590"
+players = 1
+exe = "disc/SLUS_005.90"
+disc = "disc/Need for Speed - V-Rally (USA).cue"
+discs = ["disc/Need for Speed - V-Rally (USA).cue"]
+disc_serials = ["SLUS-00590"]
+load_address = "0x80010000"
+entry_pc = "0x80086E24"
+text_size = "0x00099000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Need for Speed - V-Rally (USA) (Track 1).bin"
+cue_name = "Need for Speed - V-Rally (USA).cue"
+boot_exe = "SLUS_005.90"
+known_sizes = [133901712]
+known_md5 = [
+  "a9f8e3f06e23a4008f3fa861a07901fb",
+]
+known_sha1 = [
+  "5793b43cd7d26855d75bfc1261cf15a76cdc8ea4",
+]
+known_crc32 = [
+  "6bf0c9f4",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Need for Speed - V-Rally Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 10
+required_disc_fp = "c93e912992a507b69149943143f06af15ec3cef9b73e12d864673a832849aa88"

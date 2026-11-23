@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "need-for-speed-v-rally-psx",
+  "name": "Need for Speed - V-Rally",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "need-for-speed-v-rally-recomp",
+  "rom_identity": {
+    "crc32": [
+      "6bf0c9f4"
+    ],
+    "md5": [
+      "a9f8e3f06e23a4008f3fa861a07901fb"
+    ],
+    "sha1": [
+      "5793b43cd7d26855d75bfc1261cf15a76cdc8ea4"
+    ],
+    "disc_serials": [
+      "SLUS-00590"
+    ],
+    "sizes": [
+      133901712
+    ],
+    "filenames": [
+      "Need for Speed - V-Rally (USA).cue",
+      "Need for Speed - V-Rally (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      10
+    ],
+    "disc_fps": [
+      "c93e912992a507b69149943143f06af15ec3cef9b73e12d864673a832849aa88"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/need-for-speed-v-rally-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "need-for-speed-v-rally-*-windows-x64.zip",
+      "linux-x64": "need-for-speed-v-rally-*-linux-x64.zip",
+      "macos-arm64": "need-for-speed-v-rally-*-macos-arm64.zip",
+      "macos-x64": "need-for-speed-v-rally-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "need_for_speed_v_rally.exe",
+    "linux": "need_for_speed_v_rally",
+    "macos": "need_for_speed_v_rally"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/need-for-speed-v-rally-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

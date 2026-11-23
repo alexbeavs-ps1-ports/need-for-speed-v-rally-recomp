@@ -1,0 +1,13 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Need for Speed - V-Rally",
+  "system": "PS1",
+  "type": "recomp",
+  "toolchain": "psxrecomp",
+  "status": "exploring",
+  "project": "need-for-speed-v-rally-recomp",
+  "original": {
+    "region": "USA",
+    "serial": "SLUS-00590"
+  }
+}
